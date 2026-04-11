@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const DeveloperAPI = () => {
   return (
     <section id="developer" style={{ 
-        padding: '10px 0 60px 0', 
-        background: 'linear-gradient(135deg, #4f46e5 0%, #3b82f6 50%, #1e3a8a 100%)', 
-        color: 'white',
+        padding: '20px 0 60px 0', 
+        background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)', 
+        color: 'var(--text-main)',
         position: 'relative',
         overflow: 'hidden'
     }}>
@@ -20,17 +20,16 @@ const DeveloperAPI = () => {
                 top: 0,
                 left: 0,
                 right: 0,
-                opacity: 0.35, 
+                opacity: 0.15, 
                 fontFamily: 'monospace', 
                 fontSize: '0.9rem', 
                 whiteSpace: 'pre', 
                 userSelect: 'none',
                 pointerEvents: 'none',
-                color: '#67e8f9',
+                color: '#0369a1',
                 lineHeight: '1.6',
-                textShadow: '0 0 15px rgba(103, 232, 249, 0.4)',
-                maskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)',
-                WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 5%, black 95%, transparent)'
+                maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+                WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
             }}
           >
             {`import { Digiway } from '@digiway/sdk';
@@ -70,17 +69,17 @@ const CheckoutButton = () => {
 };
 `.repeat(100)}
           </motion.div>
-          {/* Cyan/Blue Shimmer Overlay */}
+          {/* Soft Blue Shimmer Overlay */}
           <motion.div 
-            animate={{ opacity: [0.2, 0.6, 0.2] }}
+            animate={{ opacity: [0.1, 0.3, 0.1] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             style={{ 
                 position: 'absolute', 
                 inset: 0, 
-                background: 'radial-gradient(circle at 20% 30%, rgba(34, 211, 238, 0.25), transparent), radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.2), transparent)' 
+                background: 'radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.5), transparent), radial-gradient(circle at 80% 70%, rgba(186, 230, 253, 0.4), transparent)' 
             }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(79, 70, 229, 0.4), transparent 20%, transparent 80%, rgba(30, 58, 138, 0.4))' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(224, 242, 254, 0.5), transparent 20%, transparent 80%, rgba(224, 242, 254, 0.5))' }} />
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -90,7 +89,7 @@ const CheckoutButton = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '900', marginBottom: '0.5rem', letterSpacing: '-0.04em', color: 'white' }}
+            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '900', marginBottom: '0.5rem', letterSpacing: '-0.04em', color: 'var(--text-main)' }}
           >
             THE INFRASTRUCTURE THAT <br /> BUILDS WITH YOU.
           </motion.h2>
