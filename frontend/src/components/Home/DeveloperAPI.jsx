@@ -4,82 +4,82 @@ import { motion } from 'framer-motion';
 const DeveloperAPI = () => {
   return (
     <section id="developer" style={{ 
-        padding: '20px 0 60px 0', 
-        background: 'linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%)', 
-        color: 'var(--text-main)',
+        padding: '100px 0', 
+        background: '#4c3a91', // Exact Paywize Purple
+        color: '#ffffff',
         position: 'relative',
         overflow: 'hidden'
     }}>
       {/* Tech Grid Background (Simulating Video/Matrix) */}
-      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#0a0a20' }}>
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', background: '#4c3a91' }}>
           <motion.div 
-            animate={{ y: [0, -500] }}
-            transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            animate={{ y: [0, -2000] }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             style={{ 
                 position: 'absolute', 
                 top: 0,
-                left: 0,
-                right: 0,
-                opacity: 0.15, 
+                left: -100,
+                right: -100,
+                opacity: 0.15,
                 fontFamily: 'monospace', 
-                fontSize: '0.9rem', 
-                whiteSpace: 'pre', 
+                fontSize: '1.2rem', 
+                fontWeight: '800',
+                whiteSpace: 'pre-wrap', 
                 userSelect: 'none',
                 pointerEvents: 'none',
-                color: '#0369a1',
-                lineHeight: '1.6',
-                maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
-                WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
+                color: '#ffffff', 
+                lineHeight: '1.4',
+                letterSpacing: '-0.02em',
+                zIndex: 0
             }}
           >
             {`import { Digiway } from '@digiway/sdk';
 const dw = new Digiway('pk_live_...');
-
-// Process high-volume settlements
 export const processPayout = async (batchId) => {
-  const result = await dw.payouts.execute({
-    id: batchId,
-    notif: true,
-    speed: 'instant'
-  });
-  console.log('Settlement complete: ', result.urn);
+  const result = await dw.payouts.execute({ id: batchId, speed: 'instant' });
 };
-
-// Webhook handling infrastructure
 router.post('/dw/webhook', async (req, res) => {
   const sig = req.headers['x-digiway-signature'];
   const event = dw.webhook.verify(req.rawBody, sig);
-  
-  switch(event.type) {
-    case 'order.success':
-      updateInventory(event.data);
-      break;
-    default:
-      logTrace('Unhandled event');
-  }
 });
-
-// React UI component integration
-const CheckoutButton = () => {
-  const launch = () => dw.checkout.launch({
-    orderId: 'ORD_920',
-    theme: 'dark'
-  });
-  return <button onClick={launch}>Pay Now</button>;
-};
-`.repeat(100)}
+`.repeat(300)}
           </motion.div>
-          {/* Soft Blue Shimmer Overlay */}
+
+          {/* Secondary Reverse Layer */}
           <motion.div 
-            animate={{ opacity: [0.1, 0.3, 0.1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            animate={{ y: [-2000, 0] }}
+            transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
             style={{ 
                 position: 'absolute', 
-                inset: 0, 
-                background: 'radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.5), transparent), radial-gradient(circle at 80% 70%, rgba(186, 230, 253, 0.4), transparent)' 
+                top: 0,
+                left: 100,
+                right: -100,
+                opacity: 0.08,
+                fontFamily: 'monospace', 
+                fontSize: '1rem', 
+                fontWeight: '700',
+                whiteSpace: 'pre-wrap', 
+                userSelect: 'none',
+                pointerEvents: 'none',
+                color: '#ffffff', 
+                lineHeight: '1.8'
             }}
-          />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(224, 242, 254, 0.5), transparent 20%, transparent 80%, rgba(224, 242, 254, 0.5))' }} />
+          >
+            {`// Transaction log stream
+[2026-04-12] Settlement processing...
+[2026-04-12] API Key authorized...
+[2026-04-12] Handshake successful...
+[2026-04-12] Payload delivery confirmed...
+`.repeat(300)}
+          </motion.div>
+
+          {/* Paywize Style Radial Glow Overlay */}
+          <div style={{ 
+              position: 'absolute', 
+              inset: 0, 
+              background: 'radial-gradient(circle at 50% 50%, transparent 0%, rgba(15, 23, 42, 0.4) 100%)',
+              zIndex: 1 
+          }} />
       </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
@@ -89,7 +89,7 @@ const CheckoutButton = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '900', marginBottom: '0.5rem', letterSpacing: '-0.04em', color: 'var(--text-main)' }}
+            style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '900', marginBottom: '0.5rem', letterSpacing: '-0.04em', color: '#ffffff' }}
           >
             THE INFRASTRUCTURE THAT <br /> BUILDS WITH YOU.
           </motion.h2>
@@ -128,7 +128,7 @@ const CheckoutButton = () => {
                 padding: '0.4rem 1.2rem',
                 borderRadius: '4px',
                 border: '1px solid rgba(255,255,255,0.15)',
-                background: i === 0 ? 'var(--primary)' : 'transparent',
+                background: i === 0 ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
                 color: 'white',
                 fontSize: '0.75rem',
                 fontWeight: '800',
@@ -156,7 +156,9 @@ const CheckoutButton = () => {
                 boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
                 border: '1px solid rgba(255,255,255,0.08)',
                 fontFamily: 'monospace',
-                backdropFilter: 'blur(10px)'
+                backdropFilter: 'blur(10px)',
+                position: 'relative',
+                zIndex: 2
             }}
         >
             <div style={{ display: 'flex', gap: '8px', marginBottom: '1.5rem' }}>
