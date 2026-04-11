@@ -157,9 +157,9 @@ const IndustrySpread = () => {
                     exit={{ opacity: 0, scale: 0.98, y: -20 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                        background: '#fcfcfc',
+                        background: '#f8fff9', // Soft Green
                         borderRadius: '4px',
-                        border: '1px solid rgba(0, 171, 132, 0.1)',
+                        border: '1px solid rgba(0, 171, 132, 0.2)',
                         padding: '1.5rem 2rem',
                         display: 'grid',
                         gridTemplateColumns: '1fr 1fr',
