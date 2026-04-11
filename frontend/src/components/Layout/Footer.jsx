@@ -1,11 +1,18 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import logoImg from '../../assets/Digiway Sample 1.png';
 
 const Footer = () => {
   return (
     <footer id="main-footer" style={{ padding: '80px 0 40px', background: '#fff', borderTop: '1px solid #f1f5f9' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr', gap: '2rem', marginBottom: '5rem' }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1fr 1fr 1fr', gap: '2rem', marginBottom: '5rem' }}
+        >
           <div className="footer-brand">
             <div className="logo" style={{ marginBottom: '1.5rem' }}>
               <img src={logoImg} alt="Digiway Logo" style={{ height: '40px', objectFit: 'contain' }} />
@@ -56,7 +63,7 @@ const Footer = () => {
               <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Bug Bounty</a></li>
             </ul>
           </div>
-        </div>
+        </motion.div>
         
         <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '30px', display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
           <p>© 2026 Digiway. All rights reserved.</p>

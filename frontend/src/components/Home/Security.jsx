@@ -15,7 +15,13 @@ const Security = () => {
   return (
     <section id="security" style={{ padding: '100px 0', background: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
       <div className="container">
-        <div style={{ maxWidth: '700px', marginBottom: '60px' }}>
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ maxWidth: '700px', marginBottom: '60px' }}
+        >
           <h2 style={{ fontSize: '2.5rem', lineHeight: '1', marginBottom: '1.5rem', fontWeight: '800' }}>
             SECURITY, <br />
             <span style={{ color: 'var(--primary)' }}>ENGINEERED FOR TRUST</span>
@@ -23,16 +29,16 @@ const Security = () => {
           <p style={{ fontSize: '1rem', color: 'var(--text-muted)' }}>
             Every transaction is encrypted. Every system is fortified with bank-grade rigor.
           </p>
-        </div>
+        </motion.div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
           {securityFeatures.map((item, index) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start', padding: '1.5rem', background: '#f8fafc', borderRadius: '16px', border: '1px solid #f1f5f9' }}
             >
               <div style={{ color: 'var(--primary)', flexShrink: 0 }}>

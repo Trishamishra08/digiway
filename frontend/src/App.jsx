@@ -3,10 +3,11 @@ import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 import Hero from './components/Home/Hero';
 import Brands from './components/Home/Brands';
+import MainFeatures from './components/Home/MainFeatures';
 import FinancialOS from './components/Home/FinancialOS';
 import IndustrySpread from './components/Home/IndustrySpread';
+import DeveloperAPI from './components/Home/DeveloperAPI';
 import AIAssistant from './components/Home/AIAssistant';
-import StickyFeatures from './components/Home/StickyFeatures';
 import Security from './components/Home/Security';
 import CTA from './components/Home/CTA';
 
@@ -16,12 +17,14 @@ function App() {
       <Navbar />
       <Hero />
       <Brands />
+      <MainFeatures />
       
       {/* Rest of sections following the hybrid aesthetic */}
       <FinancialOS />
+
       <IndustrySpread />
+      <DeveloperAPI />
       <AIAssistant />
-      <StickyFeatures />
       <Security />
       <CTA />
       

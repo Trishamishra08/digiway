@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronDown, Menu, ArrowRight } from 'lucide-react';
 import logoImg from '../../assets/Digiway Sample 1.png';
 
@@ -22,16 +23,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav style={{ 
-      background: 'white', 
-      borderBottom: '1px solid #f1f5f9',
-      position: 'fixed', 
-      top: 0, 
-      left: 0, 
-      width: '100%', 
-      zIndex: 1000,
-      padding: '0.8rem 0'
-    }}>
+    <motion.nav 
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      style={{ 
+        background: 'white', 
+        borderBottom: '1px solid #f1f5f9',
+        position: 'fixed', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        zIndex: 1000,
+        padding: '0.8rem 0'
+      }}
+    >
       <div className="container" style={{ display: 'flex', alignItems: 'center', maxWidth: '1400px' }}>
         {/* Left: Logo */}
         <div className="logo" style={{ flex: '0 0 250px' }}>
@@ -70,7 +76,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
