@@ -86,7 +86,7 @@ const Navbar = () => {
                   display: 'flex', 
                   alignItems: 'center', 
                   gap: '4px',
-                  fontFamily: 'var(--font-heading)',
+                  fontFamily: 'var(--font-body)',
                   padding: '1rem 0'
                 }}>
                   {item.label} {item.items && <ChevronDown size={14} />}
@@ -109,8 +109,9 @@ const Navbar = () => {
                       width: item.label === 'Products' || item.label === 'Solutions' ? '600px' : '200px',
                       display: 'grid',
                       gridTemplateColumns: item.label === 'Products' || item.label === 'Solutions' ? '1fr 1fr' : '1fr',
-                      gap: '1.2rem',
-                      zIndex: 2000
+                      gap: '0.8rem',
+                      zIndex: 2000,
+                      fontFamily: 'var(--font-body)'
                     }}
                   >
                     {item.items.map((subItem, idx) => (
@@ -119,29 +120,23 @@ const Navbar = () => {
                         href="#"
                         style={{
                           textDecoration: 'none',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '12px',
-                          padding: '8px',
+                          display: 'block',
+                          padding: '10px 12px',
                           borderRadius: '6px',
-                          transition: 'background 0.2s'
+                          transition: 'background 0.2s',
+                          fontFamily: 'var(--font-body)'
                         }}
                         onMouseEnter={(e) => e.currentTarget.style.background = '#f8fafc'}
                         onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                       >
-                        {item.label !== 'Company' && item.label !== 'Resources' && (
-                          <span style={{ fontSize: '1.2rem' }}>{subItem.icon}</span>
-                        )}
-                        <div>
-                          <div style={{ color: 'var(--text-main)', fontSize: '0.85rem', fontWeight: '800', marginBottom: '4px' }}>
-                            {subItem.title}
-                          </div>
-                          {subItem.desc && (
-                            <div style={{ color: 'var(--text-muted)', fontSize: '0.75rem', lineHeight: '1.4' }}>
-                              {subItem.desc}
-                            </div>
-                          )}
+                        <div style={{ color: 'var(--text-main)', fontSize: '0.85rem', fontWeight: '800', marginBottom: '4px', fontFamily: 'var(--font-body)' }}>
+                          {subItem.title}
                         </div>
+                        {subItem.desc && (
+                          <div style={{ color: 'var(--text-muted)', fontSize: '0.75rem', lineHeight: '1.4', fontFamily: 'var(--font-body)' }}>
+                            {subItem.desc}
+                          </div>
+                        )}
                       </a>
                     ))}
                   </motion.div>
