@@ -93,7 +93,7 @@ const IndustrySpread = () => {
   ];
 
   return (
-    <section id="industry" style={{ padding: '80px 0', background: 'white' }}>
+    <section id="industry" style={{ padding: '60px 0', background: 'var(--dark)', color: 'white' }}>
       <div className="container">
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '20px' }}>
@@ -102,7 +102,7 @@ const IndustrySpread = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '900', letterSpacing: '-0.04em' }}
+                style={{ fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', fontWeight: '900', letterSpacing: '-0.04em', color: 'white' }}
              >
             BUILT FOR EVERY <span style={{ color: 'var(--primary)' }}>LAYER OF BUSINESS</span>
           </motion.h2>
@@ -111,7 +111,7 @@ const IndustrySpread = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            style={{ color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '800px', margin: '0.5rem auto 0 auto' }}
+            style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', maxWidth: '800px', margin: '0.5rem auto 0 auto' }}
           >
             Purpose-built connected banking for the way each industry operates. Fast, compliant, and deeply integrated.
           </motion.p>
@@ -123,7 +123,7 @@ const IndustrySpread = () => {
             justifyContent: 'center', 
             gap: '0.4rem', 
             flexWrap: 'wrap', 
-            marginBottom: '1.5rem' 
+            marginBottom: '1rem' 
         }}>
           {industries.map((ind, i) => (
             <button
@@ -132,9 +132,9 @@ const IndustrySpread = () => {
               style={{
                 padding: '0.4rem 1rem',
                 borderRadius: '4px',
-                border: '1px solid #eee',
-                background: activeTab === i ? '#1a1a1a' : 'white',
-                color: activeTab === i ? 'white' : 'var(--text-main)',
+                border: '1px solid rgba(255,255,255,0.1)',
+                background: activeTab === i ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
+                color: 'white',
                 fontSize: '0.75rem',
                 fontWeight: '800',
                 cursor: 'pointer',
@@ -157,44 +157,54 @@ const IndustrySpread = () => {
                     exit={{ opacity: 0, scale: 0.98, y: -20 }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                        background: '#f8fff9', // Soft Green
-                        borderRadius: '4px',
-                        border: '1px solid rgba(0, 171, 132, 0.2)',
-                        padding: '1.5rem 2rem',
+                        background: '#151b2b', // Slightly lighter dark panel
+                        borderRadius: '6px',
+                        border: '1px solid rgba(255,255,255,0.06)',
+                        padding: '1rem 1.5rem',
                         display: 'grid',
                         gridTemplateColumns: '1fr 1fr',
-                        gap: '2.5rem',
+                        gap: '1.5rem',
                         boxShadow: '0 20px 60px rgba(0,0,0,0.03)',
                         alignItems: 'center',
-                        minHeight: '320px'
+                        minHeight: '260px'
                     }}
                 >
                     {/* Left side Content */}
-                    <div style={{ borderRight: '1px solid #eee', paddingRight: '2rem', position: 'relative' }}>
+                    <div style={{ borderRight: '1px solid rgba(255,255,255,0.1)', paddingRight: '2rem', position: 'relative' }}>
                         <div style={{ marginBottom: '1.2rem' }}>
-                            <div style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--text-main)', lineHeight: '1.2' }}>{industries[activeTab].title}</div>
-                            <div style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--secondary)', lineHeight: '1.2' }}>{industries[activeTab].titleSecondary}</div>
+                            <div style={{ fontSize: '1.5rem', fontWeight: '900', color: 'white', lineHeight: '1.2' }}>{industries[activeTab].title}</div>
+                            <div style={{ fontSize: '1.5rem', fontWeight: '900', color: 'var(--primary)', lineHeight: '1.2' }}>{industries[activeTab].titleSecondary}</div>
                         </div>
-                        <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '1rem' }}>
+                        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: '1.5', marginBottom: '1rem' }}>
                             {industries[activeTab].desc}
                         </p>
                         
-                        {/* Connecting Line Visual with Moving Pulse */}
-                        <div style={{ position: 'absolute', right: '-1px', top: '0', height: '100%', width: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '2rem' }}>
-                            {[1, 2, 3].map((_, i) => (
-                                <div key={i} style={{ position: 'relative', width: '40px', height: '2px', background: '#eee', overflow: 'hidden' }}>
-                                    <motion.div 
-                                        animate={{ x: ['-100%', '100%'] }}
-                                        transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.4, ease: "linear" }}
-                                        style={{ position: 'absolute', top: 0, left: 0, width: '40%', height: '100%', background: 'linear-gradient(90deg, transparent, var(--secondary), transparent)' }}
-                                    />
-                                </div>
-                            ))}
+                        {/* Connecting Visual: Floating Pulse Badge */}
+                        <div style={{ position: 'absolute', right: '-12px', top: '50%', transform: 'translateY(-50%)', zIndex: 10 }}>
+                            <motion.div 
+                                animate={{ 
+                                    boxShadow: ['0 0 0 0 rgba(79, 70, 229, 0.4)', '0 0 0 20px rgba(79, 70, 229, 0)', '0 0 0 0 rgba(79, 70, 229, 0)'] 
+                                }}
+                                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                                style={{ 
+                                    width: '48px', 
+                                    height: '48px', 
+                                    background: 'var(--primary)', 
+                                    borderRadius: '50%', 
+                                    display: 'flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center', 
+                                    color: 'white', 
+                                    boxShadow: '0 8px 20px rgba(79, 70, 229, 0.3)' 
+                                }}
+                            >
+                                <RefreshCw size={22} color="white" />
+                            </motion.div>
                         </div>
                     </div>
 
                     {/* Right side Features */}
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                         {industries[activeTab].features.map((feat, idx) => (
                             <motion.div 
                                 key={idx}
@@ -202,11 +212,12 @@ const IndustrySpread = () => {
                                 animate={{ x: 0, opacity: 1 }}
                                 transition={{ delay: idx * 0.1 }}
                                 style={{ 
-                                    background: 'white', 
-                                    padding: '1rem', 
-                                    borderRadius: '4px', 
-                                    boxShadow: '0 4px 15px rgba(0,0,0,0.02)', 
-                                    border: '1px solid #f1f5f9',
+                                    background: '#1f2937', 
+                                    padding: '0.8rem 1rem', 
+                                    borderRadius: '6px', 
+                                    boxShadow: '0 4px 15px rgba(0,0,0,0.3)', 
+                                    border: '1px solid rgba(255,255,255,0.1)',
+                                    borderLeft: '3px solid var(--primary)',
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '1rem'
@@ -216,8 +227,8 @@ const IndustrySpread = () => {
                                     {React.cloneElement(feat.icon, { size: 16 })}
                                 </div>
                                 <div>
-                                    <div style={{ fontWeight: '800', fontSize: '0.85rem', color: 'var(--text-main)' }}>{feat.title}</div>
-                                    <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', marginTop: '2px' }}>{feat.desc}</div>
+                                    <div style={{ fontWeight: '800', fontSize: '0.85rem', color: 'white' }}>{feat.title}</div>
+                                    <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.6)', marginTop: '2px' }}>{feat.desc}</div>
                                 </div>
                             </motion.div>
                         ))}

@@ -17,36 +17,36 @@ const MainFeatures = () => {
   const features = [
     {
       id: 0,
-      slug: 'mf-dashboard',
-      tab: 'Multi-Bank Dashboard',
-      title: 'Multi-Bank',
-      titleHighlight: 'Dashboard',
-      desc: 'Manage 30+ banks from one dashboard with real-time visibility and instant updates',
-      checkpoints: ['Instant balance refresh', '35% faster decisions', 'Secure API connectivity'],
+      slug: 'mf-payin',
+      tab: 'Pay-in Services',
+      title: 'Seamless',
+      titleHighlight: 'Pay-in',
+      desc: 'Accept payments effortlessly using deep integrations with NSDL, Razorpay, and other trusted services with multi-channel support.',
+      checkpoints: ['Intelligent Smart Routing', 'Highest success rates', 'Instant & T+0 settlements'],
       visual: (
         <div style={{ position: 'relative', height: '100%', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
           <div style={{ padding: '1rem', background: 'white', borderRadius: '0px', border: '1px solid rgba(0,0,0,0.05)', boxShadow: '0 4px 20px rgba(0,0,0,0.03)' }}>
              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                <h4 style={{ fontSize: '0.95rem', fontWeight: '800' }}>Connected Banks</h4>
-                <button className="btn-payu-pill-dark" style={{ padding: '0.3rem 0.8rem', fontSize: '0.65rem' }}>Check Balance &gt;</button>
+                <h4 style={{ fontSize: '0.95rem', fontWeight: '800' }}>Active Pay-in Partners</h4>
+                <button className="btn-payu-pill-dark" style={{ padding: '0.3rem 0.8rem', fontSize: '0.65rem' }}>View Analytics &gt;</button>
              </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem', borderRadius: '12px', background: '#f8fbf9' }}>
-                    <div style={{ width: '40px', height: '40px', background: 'white', border: '1px solid #eee', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        🏨
+                    <div style={{ width: '40px', height: '40px', background: 'white', border: '1px solid #eee', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#4f46e5' }}>
+                        ₹
                     </div>
                     <div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: '700' }}>Shivalik Bank **** 9849</div>
-                        <div style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--text-main)' }}>₹ *****</div>
+                        <div style={{ fontSize: '0.75rem', fontWeight: '700' }}>NSDL Payments</div>
+                        <div style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--text-main)' }}>Status: Active <span style={{ color: '#22c55e' }}>●</span></div>
                     </div>
                 </div>
-                <div style={{ display: 'flex', opacity: 0.4, alignItems: 'center', gap: '0.8rem', padding: '0.6rem', borderRadius: '12px', background: '#f8fbf9' }}>
-                    <div style={{ width: '40px', height: '40px', background: 'white', border: '1px solid #eee', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        🏥
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', padding: '0.6rem', borderRadius: '12px', background: '#f8fbf9' }}>
+                    <div style={{ width: '40px', height: '40px', background: 'white', border: '1px solid #eee', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#2563eb' }}>
+                        ⚡
                     </div>
                     <div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: '700' }}>Axis Bank **** 4578</div>
-                        <div style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--text-main)' }}>₹ *****</div>
+                        <div style={{ fontSize: '0.75rem', fontWeight: '700' }}>Razorpay</div>
+                        <div style={{ fontSize: '0.9rem', fontWeight: '800', color: 'var(--text-main)' }}>Status: Active <span style={{ color: '#22c55e' }}>●</span></div>
                     </div>
                 </div>
              </div>
@@ -64,7 +64,7 @@ const MainFeatures = () => {
       checkpoints: ['Smart auto failure routing', 'Multi level approvals', '99.9% Uptime'],
       visual: (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-            <div style={{ width: '120px', height: '120px', background: 'var(--primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
+            <div style={{ width: '120px', height: '120px', background: 'var(--secondary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white' }}>
                 <CheckCircle2 size={64} />
             </div>
         </div>
@@ -85,7 +85,7 @@ const MainFeatures = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {[1, 0, 1, 1, 0].map((v, i) => (
                         <div key={i} style={{ height: '14px', background: '#f1f5f9', borderRadius: '4px', width: '100%', position: 'relative' }}>
-                            <div style={{ position: 'absolute', right: '4px', top: '2px', color: v ? 'var(--primary)' : 'red', fontSize: '8px' }}>{v ? '✓' : '✗'}</div>
+                            <div style={{ position: 'absolute', right: '4px', top: '2px', color: v ? 'var(--secondary)' : 'red', fontSize: '8px' }}>{v ? '✓' : '✗'}</div>
                         </div>
                     ))}
                 </div>
@@ -95,7 +95,7 @@ const MainFeatures = () => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
                     {[1, 1, 1, 0, 0].map((v, i) => (
                         <div key={i} style={{ height: '14px', background: '#f1f5f9', borderRadius: '4px', width: '100%', position: 'relative' }}>
-                            <div style={{ position: 'absolute', right: '4px', top: '2px', color: v ? 'var(--primary)' : '#cbd5e1', fontSize: '8px' }}>{v ? '✓' : '☐'}</div>
+                            <div style={{ position: 'absolute', right: '4px', top: '2px', color: v ? 'var(--secondary)' : '#cbd5e1', fontSize: '8px' }}>{v ? '✓' : '☐'}</div>
                         </div>
                     ))}
                 </div>
@@ -103,47 +103,7 @@ const MainFeatures = () => {
         </div>
       )
     },
-    {
-      id: 3,
-      slug: 'mf-cards',
-      tab: 'Corporate Cards',
-      title: 'Corporate',
-      titleHighlight: 'Cards',
-      desc: 'Issue physical or virtual cards instantly, with built-in limits, merchant locks and live expense tracking.',
-      checkpoints: ['Instant issuance', 'Real time tracking', 'Policy based controls'],
-      visual: (
-        <div style={{ perspective: '1000px', display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-            <div 
-               style={{ 
-                   width: '320px', 
-                   height: '200px', 
-                   background: 'linear-gradient(135deg, #4f46e5 0%, #1e1b4b 100%)', 
-                   borderRadius: '4px', 
-                   padding: '2rem', 
-                   color: 'white',
-                   boxShadow: '0 20px 50px rgba(0,0,0,0.2)',
-                   position: 'relative',
-                   rotateY: -15,
-                   rotateX: 10
-               }}
-            >
-                <div style={{ fontWeight: '800', fontSize: '0.9rem', marginBottom: '2rem' }}>PAYWISE <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>CORPORATE PLATINUM</span></div>
-                <div style={{ width: '45px', height: '35px', background: '#ffd700', borderRadius: '6px', opacity: 0.8, marginBottom: '2rem' }}></div>
-                <div style={{ fontFamily: 'monospace', fontSize: '1.2rem', letterSpacing: '2px' }}>4826 7294 **** 3901</div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', marginTop: '1.5rem' }}>
-                    <div style={{ fontSize: '0.7rem' }}>
-                        <div style={{ opacity: 0.6 }}>CARDHOLDER NAME</div>
-                        <div>RAHUL SHARMA</div>
-                    </div>
-                    <div style={{ fontSize: '1rem', fontWeight: '900' }}>VISA</div>
-                </div>
-                <div style={{ position: 'absolute', top: '20px', right: '20px', background: 'white', borderRadius: '15px', padding: '4px 12px', color: 'black', fontSize: '0.7rem', fontWeight: '800' }}>
-                    Limit: ₹2,00,000
-                </div>
-            </div>
-        </div>
-      )
-    },
+
     {
       id: 4,
       slug: 'mf-bills',
@@ -235,14 +195,14 @@ const MainFeatures = () => {
                   <li key={f.id}>
                     <motion.a
                       href={`#${f.slug}`}
-                      whileHover={{ x: 5, background: 'rgba(0, 171, 132, 0.08)' }}
+                      whileHover={{ x: 5, background: 'rgba(79, 70, 229, 0.08)' }}
                       style={{
                         display: 'block',
                         width: '100%',
                         textDecoration: 'none',
                         padding: '1.2rem 1rem',
                         borderRadius: '2px',
-                        background: activeTab === i ? '#f0fffb' : 'transparent',
+                        background: activeTab === i ? '#f5f7ff' : 'transparent',
                         transition: 'color 0.3s ease',
                         position: 'relative'
                       }}
@@ -250,12 +210,12 @@ const MainFeatures = () => {
                       {activeTab === i && (
                           <motion.div 
                               layoutId="active-marker"
-                              style={{ position: 'absolute', left: 0, top: '20%', bottom: '20%', width: '4px', background: 'var(--primary)', borderRadius: '0 4px 4px 0' }}
+                              style={{ position: 'absolute', left: 0, top: '20%', bottom: '20%', width: '4px', background: 'var(--secondary)', borderRadius: '0 4px 4px 0' }}
                           />
                       )}
                       <motion.span 
                           animate={{ 
-                            color: activeTab === i ? 'var(--primary)' : 'rgba(0,0,0,0.4)',
+                            color: activeTab === i ? 'var(--secondary)' : 'rgba(0,0,0,0.4)',
                             scale: activeTab === i ? 1.05 : 1
                           }}
                           style={{ 
@@ -287,15 +247,15 @@ const MainFeatures = () => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{ 
                     marginBottom: '0', 
-                    minHeight: isMobile ? 'auto' : '400px', 
+                    minHeight: 'auto', 
                     display: 'flex', 
                     flexDirection: 'column', 
                     justifyContent: 'center',
-                    padding: isMobile ? '1.2rem' : '1.5rem',
-                    background: '#f0fffb',
-                    borderRadius: '0',
-                    border: '1px solid rgba(0, 171, 132, 0.1)',
-                    borderBottom: i === features.length - 1 ? '1px solid rgba(0, 171, 132, 0.1)' : 'none',
+                    padding: isMobile ? '2rem 1.5rem' : '3rem',
+                    background: 'linear-gradient(145deg, #0a0f1c 0%, #111827 100%)',
+                    borderRadius: '0px',
+                    border: '1px solid rgba(255,255,255,0.05)',
+                    borderBottom: i !== features.length - 1 ? 'none' : '1px solid rgba(255,255,255,0.05)',
                     boxShadow: 'none'
                 }}
               >
@@ -306,7 +266,7 @@ const MainFeatures = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            style={{ marginBottom: '1rem', fontSize: isMobile ? '1.6rem' : '1.8rem' }}
+                            style={{ marginBottom: '1rem', fontSize: isMobile ? '1.6rem' : '2rem', color: 'white' }}
                         >
                             {f.title} <span style={{ color: 'var(--secondary)' }}>{f.titleHighlight}</span>
                         </motion.h3>
@@ -314,14 +274,14 @@ const MainFeatures = () => {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            style={{ fontSize: isMobile ? '0.9rem' : '0.95rem', color: 'var(--text-muted)', marginBottom: isMobile ? '1.2rem' : '2rem', lineHeight: '1.6' }}
+                            style={{ fontSize: isMobile ? '0.9rem' : '0.95rem', color: 'rgba(255,255,255,0.6)', marginBottom: isMobile ? '1.2rem' : '2rem', lineHeight: '1.6' }}
                         >
                             {f.desc}
                         </motion.p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                             {f.checkpoints.map((check, idx) => (
-                                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', fontWeight: '600' }}>
-                                    <CheckCircle2 size={16} color="var(--primary)" />
+                                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', fontWeight: '600', color: 'white' }}>
+                                    <CheckCircle2 size={16} color="var(--secondary)" />
                                     <span>{check}</span>
                                 </div>
                             ))}
@@ -329,10 +289,11 @@ const MainFeatures = () => {
                     </div>
 
                     <div style={{ 
-                        background: '#f8fbf9', 
-                        borderRadius: '0px', 
+                        background: '#ffffff', 
+                        borderRadius: '16px', 
                         padding: isMobile ? '1.5rem' : '2rem',
-                        border: '1px solid rgba(0,0,0,0.02)',
+                        border: 'none',
+                        boxShadow: '0 10px 40px rgba(0,0,0,0.15)',
                         overflow: 'hidden',
                         display: 'flex',
                         alignItems: 'center',

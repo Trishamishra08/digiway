@@ -7,36 +7,38 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
 
   const productsMenu = [
-    { title: 'Connected Banking', desc: 'Connect 30+ banks via API', icon: '🏦' },
-    { title: 'Bulk Payouts', desc: 'Disburse funds via NEFT, RTGS', icon: '💸' },
-    { title: 'Auto Reconciliation', desc: 'AI-powered matching with 99%+', icon: '🔄' },
-    { title: 'Corporate Cards', desc: 'Issue physical or virtual cards', icon: '💳' },
-    { title: 'UPI Collection', desc: 'Accept payments via UPI Collect', icon: '📱' },
-    { title: 'Tax Automation', desc: 'Automate GST/TDS categorization', icon: '📜' }
+    { title: 'Payment Gateway (Pay-In)', link: '#' },
+    { title: 'Payout API', link: '#' }
   ];
 
   const solutionsMenu = [
-    { title: 'E-commerce & Marketplaces', desc: 'Split payments, seller payouts', icon: '🛒' },
-    { title: 'Logistics & Supply Chain', desc: 'Bulk driver payouts, fuel cards', icon: '🚚' },
-    { title: 'SaaS & Technology', desc: 'Subscription tracking, smart billing', icon: '💻' },
-    { title: 'Manufacturing & Trading', desc: 'Vendor payments, invoice matching', icon: '🏭' },
-    { title: 'Retail & Restaurant Chains', desc: 'Store-level tracking, POS', icon: '🏠' },
-    { title: 'Real Estate & Construction', desc: 'Unit-wise collections', icon: '🏗️' }
+    { title: 'For Startups', link: '#' },
+    { title: 'For Enterprises', link: '#' },
+    { title: 'For E-commerce', link: '#' }
   ];
 
-  const companyMenu = [
-    { title: 'About', link: '#' },
-    { title: 'Team', link: '#' },
-    { title: 'Careers', link: '#' },
-    { title: 'Partners', link: '#' },
-    { title: 'Press', link: '#' }
+  const developersMenu = [
+    { title: 'API Documentation', link: '#' },
+    { title: 'Integration Guide', link: '#' },
+    { title: 'SDKs', link: '#' }
   ];
 
   const resourcesMenu = [
-    { title: 'Case Studies', link: '#' },
     { title: 'Blog', link: '#' },
-    { title: 'FAQ', link: '#' },
-    { title: 'API Docs', link: '#' }
+    { title: 'Case Studies', link: '#' },
+    { title: 'FAQs', link: '#' }
+  ];
+
+  const companyMenu = [
+    { title: 'About Us', link: '#' },
+    { title: 'Contact Us', link: '#' },
+    { title: 'Careers', link: '#' }
+  ];
+
+  const legalMenu = [
+    { title: 'Privacy Policy', link: '#' },
+    { title: 'Terms & Conditions', link: '#' },
+    { title: 'Refund Policy', link: '#' }
   ];
 
   return (
@@ -52,24 +54,26 @@ const Navbar = () => {
         left: 0, 
         width: '100%', 
         zIndex: 1000,
-        padding: '0.8rem 0'
+        padding: '0.5rem 0'
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', maxWidth: '1400px' }}>
         {/* Left: Logo */}
-        <div className="logo" style={{ flex: '0 0 250px' }}>
-          <img src={logoImg} alt="Digiway Logo" style={{ height: '36px', objectFit: 'contain' }} />
+        <div className="logo" style={{ flex: '0 0 260px', paddingLeft: '30px' }}>
+          <img src={logoImg} alt="Digiway Logo" style={{ height: '38px', objectFit: 'contain', transform: 'scale(1.2)', transformOrigin: 'left center' }} />
         </div>
 
         {/* Center: Navigation Links */}
         <div style={{ flex: '1 1 auto', display: 'flex', justifyContent: 'center' }}>
-          <ul style={{ display: 'flex', gap: '2.5rem', listStyle: 'none', margin: 0, padding: 0 }}>
+          <ul style={{ display: 'flex', gap: '1.5rem', listStyle: 'none', margin: 0, padding: 0 }}>
             {[
               { label: 'Products', items: productsMenu },
               { label: 'Solutions', items: solutionsMenu },
-              { label: 'Company', items: companyMenu },
+              { label: 'Developers', items: developersMenu },
+              { label: 'Pricing', items: null },
               { label: 'Resources', items: resourcesMenu },
-              { label: 'Contact Us', items: null }
+              { label: 'Company', items: companyMenu },
+              { label: 'Legal', items: legalMenu }
             ].map((item) => (
               <li 
                 key={item.label} 
@@ -87,7 +91,7 @@ const Navbar = () => {
                   alignItems: 'center', 
                   gap: '4px',
                   fontFamily: 'var(--font-body)',
-                  padding: '1rem 0'
+                  padding: '0.8rem 0'
                 }}>
                   {item.label} {item.items && <ChevronDown size={14} />}
                 </a>
@@ -100,16 +104,16 @@ const Navbar = () => {
                     style={{
                       position: 'absolute',
                       top: '100%',
-                      left: item.label === 'Products' || item.label === 'Solutions' ? '-100px' : '0',
+                      left: '0',
                       background: 'white',
                       boxShadow: '0 15px 50px rgba(0,0,0,0.1)',
                       border: '1px solid #f1f5f9',
                       borderRadius: '8px',
-                      padding: '1.5rem',
-                      width: item.label === 'Products' || item.label === 'Solutions' ? '600px' : '200px',
-                      display: 'grid',
-                      gridTemplateColumns: item.label === 'Products' || item.label === 'Solutions' ? '1fr 1fr' : '1fr',
-                      gap: '0.8rem',
+                      padding: '0.8rem',
+                      width: '220px',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.2rem',
                       zIndex: 2000,
                       fontFamily: 'var(--font-body)'
                     }}
@@ -117,11 +121,11 @@ const Navbar = () => {
                     {item.items.map((subItem, idx) => (
                       <a 
                         key={idx}
-                        href="#"
+                        href={subItem.link}
                         style={{
                           textDecoration: 'none',
                           display: 'block',
-                          padding: '10px 12px',
+                          padding: '0.6rem 0.8rem',
                           borderRadius: '6px',
                           transition: 'background 0.2s',
                           fontFamily: 'var(--font-body)'
@@ -129,14 +133,9 @@ const Navbar = () => {
                         onMouseEnter={(e) => e.currentTarget.style.background = '#f8fafc'}
                         onMouseLeave={(e) => e.currentTarget.style.background = 'transparent'}
                       >
-                        <div style={{ color: 'var(--text-main)', fontSize: '0.85rem', fontWeight: '800', marginBottom: '4px', fontFamily: 'var(--font-body)' }}>
+                        <div style={{ color: 'var(--text-main)', fontSize: '0.9rem', fontWeight: '500', fontFamily: 'var(--font-body)' }}>
                           {subItem.title}
                         </div>
-                        {subItem.desc && (
-                          <div style={{ color: 'var(--text-muted)', fontSize: '0.75rem', lineHeight: '1.4', fontFamily: 'var(--font-body)' }}>
-                            {subItem.desc}
-                          </div>
-                        )}
                       </a>
                     ))}
                   </motion.div>
@@ -149,10 +148,10 @@ const Navbar = () => {
         {/* Right: Actions */}
         <div style={{ flex: '0 0 320px', display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '0.8rem' }}>
           <button className="btn-payu-secondary" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            Sign In <ArrowRight size={16} />
+            Login <ArrowRight size={16} />
           </button>
           <button className="btn-payu-pill-dark">
-            Get Started <ArrowRight size={16} />
+            Sign Up <ArrowRight size={16} />
           </button>
         </div>
       </div>

@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary: #00AB84;
-  --primary-dark: #008f6e;
-  --primary-light: #e6f7f3;
-  --secondary: #4f46e5;
-  --nav-text: #00504d;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #eff6ff;
+  --secondary: #0f172a;
+  --nav-text: #1e293b;
   --bg-page: #f8fbf9;
-  --text-main: #1a1a1a;
+  --text-main: #0f172a;
   --text-muted: #64748b;
   --font-heading: 'Roboto Slab', serif;
   --font-body: 'Open Sans', sans-serif;
   --radius-lg: 32px;
   --radius-xl: 60px;
-  --dark: #0b1215; /* Dark background for sections like Witty */
+  --dark: #0b1215;
 }
 
 * {
@@ -46,7 +46,7 @@ h1, h2, h3 {
 }
 
 .btn-payu-primary {
-  background-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   color: white;
   border: none;
   padding: 0.9rem 2.2rem;
@@ -58,7 +58,13 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+}
+
+.btn-payu-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
 }
 
 .btn-payu-secondary {

@@ -13,16 +13,16 @@ const Security = () => {
   ];
 
   return (
-    <section id="security" style={{ padding: '100px 0', background: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
+    <section id="security" style={{ padding: '60px 0', background: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
       <div className="container">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          style={{ maxWidth: '700px', marginBottom: '60px' }}
+          style={{ maxWidth: '700px', marginBottom: '30px' }}
         >
-          <h2 style={{ fontSize: '2.5rem', lineHeight: '1', marginBottom: '1.5rem', fontWeight: '800' }}>
+          <h2 style={{ fontSize: '2.5rem', lineHeight: '1', marginBottom: '0.5rem', fontWeight: '800' }}>
             SECURITY, <br />
             <span style={{ color: 'var(--primary)' }}>ENGINEERED FOR TRUST</span>
           </h2>
@@ -31,7 +31,7 @@ const Security = () => {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem' }}>
           {securityFeatures.map((item, index) => (
             <motion.div 
               key={index}
@@ -39,7 +39,7 @@ const Security = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              style={{ display: 'flex', gap: '1.2rem', alignItems: 'flex-start', padding: '1.5rem', background: '#f8fafc', borderRadius: '16px', border: '1px solid #f1f5f9' }}
+              style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', padding: '1.2rem', background: '#f8fafc', borderRadius: '8px', border: '1px solid #f1f5f9' }}
             >
               <div style={{ color: 'var(--primary)', flexShrink: 0 }}>
                 {React.cloneElement(item.icon, { size: 24 })}
