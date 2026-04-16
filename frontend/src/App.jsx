@@ -5,6 +5,7 @@ import Hero from './components/Home/Hero';
 import MainFeatures from './components/Home/MainFeatures';
 import FinancialOS from './components/Home/FinancialOS';
 import IndustrySpread from './components/Home/IndustrySpread';
+import HowItWorks from './components/Home/HowItWorks';
 import DeveloperAPI from './components/Home/DeveloperAPI';
 import Security from './components/Home/Security';
 import CTA from './components/Home/CTA';
@@ -20,6 +21,7 @@ function App() {
       <FinancialOS />
 
       <IndustrySpread />
+      <HowItWorks />
       <DeveloperAPI />
       <Security />
       <CTA />
