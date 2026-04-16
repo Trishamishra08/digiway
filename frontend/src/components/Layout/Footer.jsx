@@ -24,8 +24,8 @@ const Footer = () => {
         backgroundSize: '100% auto',
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        filter: 'invert(1) grayscale(1) contrast(1.5)', 
-        opacity: 0.20, // Light grey opacity for the background map
+        filter: 'invert(1) grayscale(1) contrast(1.2)', 
+        opacity: 0.15, // Increased slightly from 0.08 to 0.15 so the map is clearly visible
         zIndex: 0,
         pointerEvents: 'none'
       }} />
