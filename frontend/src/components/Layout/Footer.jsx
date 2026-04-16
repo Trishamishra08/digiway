@@ -7,10 +7,10 @@ const Footer = () => {
   return (
     <footer id="main-footer" style={{ 
       padding: '40px 0 20px', 
-      background: '#050505', 
+      background: '#ffffff', // Changed to white background
       position: 'relative',
       overflow: 'hidden',
-      borderTop: '1px solid rgba(255,255,255,0.05)' 
+      borderTop: '1px solid rgba(0,0,0,0.05)' // Dark subtle border
     }}>
       {/* World Map Background */}
       <div style={{
@@ -19,11 +19,13 @@ const Footer = () => {
         left: '0',
         width: '100%', 
         height: '100%',
+        // Dotted map image overlay (using the existing network map but inverted for light mode)
         backgroundImage: `url(${worldNetworkImg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundSize: '100% auto',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
-        opacity: 0.15,
+        filter: 'invert(1) grayscale(1) contrast(1.5)', 
+        opacity: 0.20, // Light grey opacity for the background map
         zIndex: 0,
         pointerEvents: 'none'
       }} />
@@ -37,61 +39,61 @@ const Footer = () => {
         >
           <div className="footer-brand">
             <div className="logo" style={{ marginBottom: '1.5rem' }}>
-              <img src={logoImg} alt="Digiway Logo" style={{ height: '40px', objectFit: 'contain', filter: 'brightness(0) invert(1)' }} />
+              <img src={logoImg} alt="Digiway Logo" style={{ height: '40px', objectFit: 'contain' }} /> {/* Removed white filter for light bg */}
             </div>
-            <p style={{ maxWidth: '240px', marginBottom: '2rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.6' }}>
+            <p style={{ maxWidth: '240px', marginBottom: '2rem', fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}> {/* Darker text */}
               India's leading payment solution provider. Unified, reliable, and secure infrastructure for all your business needs.
             </p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <a href="#" style={{ textDecoration: 'none', color: 'white', fontWeight: '800', opacity: 0.6 }}>𝕏</a>
-              <a href="#" style={{ textDecoration: 'none', color: 'white', fontWeight: '800', opacity: 0.6 }}>in</a>
+              <a href="#" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '800', opacity: 0.7 }}>𝕏</a>
+              <a href="#" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: '800', opacity: 0.7 }}>in</a>
             </div>
           </div>
           
           <div>
-            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: 'white' }}>Products</h4>
+            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: '#1a1a1a', fontWeight: '800' }}>Products</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.8rem' }}>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Payment Gateway</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Digiway Payouts</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Corporate Cards</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Affordability</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Payment Gateway</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Digiway Payouts</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Corporate Cards</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Affordability</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: 'white' }}>Industries</h4>
+            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: '#1a1a1a', fontWeight: '800' }}>Industries</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.8rem' }}>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>E-commerce</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Education</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>BFSI</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Retail</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>E-commerce</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Education</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>BFSI</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Retail</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: 'white' }}>Legal</h4>
+            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: '#1a1a1a', fontWeight: '800' }}>Legal</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.8rem' }}>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Privacy Policy</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Terms of Use</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Developer Terms</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Privacy Policy</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Terms of Use</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Developer Terms</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: 'white' }}>Support</h4>
+            <h4 style={{ marginBottom: '1.2rem', fontSize: '0.9rem', color: '#1a1a1a', fontWeight: '800' }}>Support</h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.8rem' }}>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Help Center</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Contact Sales</a></li>
-              <li><a href="#" style={{ textDecoration: 'none', color: 'rgba(255,255,255,0.6)' }}>Bug Bounty</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Help Center</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Contact Sales</a></li>
+              <li><a href="#" style={{ textDecoration: 'none', color: 'var(--text-muted)' }}>Bug Bounty</a></li>
             </ul>
           </div>
         </motion.div>
         
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)' }}>
+        <div style={{ borderTop: '1px solid rgba(0,0,0,0.1)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
           <p>© 2026 Digiway. All rights reserved.</p>
           <div style={{ display: 'flex', gap: '2rem' }}>
             <span>Privacy Policy</span>
-            <span>Terms & Conditions</span>
+            <span>Terms &amp; Conditions</span>
           </div>
         </div>
       </div>

@@ -32,7 +32,7 @@ const Hero = () => {
         />
       </svg>
 
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', gap: '1.5rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
         
         {/* Left: Paywize Content + PayU Serif Font Style */}
         <motion.div
@@ -105,8 +105,8 @@ const Hero = () => {
             animate={{ scale: [1, 1.05, 1] }}
             transition={{ duration: 4, repeat: Infinity }}
             style={{ 
-              width: '450px', 
-              height: '450px', 
+              width: '420px', 
+              height: '420px', 
               background: 'white', 
               borderRadius: '50%', 
               position: 'absolute', 
@@ -118,7 +118,7 @@ const Hero = () => {
             }}
           ></motion.div>
           
-          <div style={{ position: 'relative', width: '340px', height: '340px', zIndex: 2 }}>
+          <div style={{ position: 'relative', width: '310px', height: '310px', zIndex: 2 }}>
             {/* Video Container (Circular Frame) */}
             <motion.div 
               whileHover={{ scale: 1.02 }}
@@ -146,8 +146,7 @@ const Hero = () => {
             <motion.div
                animate={{ y: [0, -15, 0] }}
                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-               // Shifted further outside the circle
-               style={{ position: 'absolute', top: '40px', right: '-110px', zIndex: 10, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '10px 18px', borderRadius: '14px', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid rgba(255,255,255,1)', display: 'flex', alignItems: 'center', gap: '8px' }}
+               style={{ position: 'absolute', top: '40px', right: '-60px', zIndex: 10, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '10px 18px', borderRadius: '14px', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid rgba(255,255,255,1)', display: 'flex', alignItems: 'center', gap: '8px' }}
             >
                <div style={{ width: '8px', height: '8px', background: 'var(--primary)', borderRadius: '50%', boxShadow: '0 0 10px var(--primary)' }}></div>
                <span style={{ fontSize: '0.8rem', fontWeight: '800', color: 'var(--text-main)' }}>99.99% Uptime</span>
@@ -156,8 +155,7 @@ const Hero = () => {
             <motion.div
                animate={{ y: [0, 15, 0] }}
                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-               // Shifted further outside the circle's bottom left edge
-               style={{ position: 'absolute', bottom: '40px', left: '-120px', zIndex: 10, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '10px 16px', borderRadius: '14px', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid rgba(255,255,255,1)', display: 'flex', alignItems: 'center', gap: '8px' }}
+               style={{ position: 'absolute', bottom: '40px', left: '-80px', zIndex: 10, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(10px)', padding: '10px 16px', borderRadius: '14px', boxShadow: '0 20px 40px rgba(0,0,0,0.08)', border: '1px solid rgba(255,255,255,1)', display: 'flex', alignItems: 'center', gap: '8px' }}
             >
                <div>
                   <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: '600', marginBottom: '1px' }}>Processing Speed</div>
@@ -178,6 +176,59 @@ const Hero = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
               />
           </svg>
+        </motion.div>
+
+        {/* Right: What's New Section */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          style={{ 
+            position: 'relative', 
+            zIndex: 10, 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '1.2rem', 
+            paddingLeft: '4rem', // Shifted further right
+            fontFamily: '"Open Sans", sans-serif' // Applied Open Sans
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.2rem' }}>
+            <h3 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#000' }}>What's New</h3>
+          </div>
+          
+          <motion.div whileHover={{ x: 5 }} style={{ display: 'flex', gap: '1rem', alignItems: 'center', cursor: 'pointer' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '12px', flexShrink: 0, overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Startup" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div>
+              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '0.2rem', lineHeight: '1.2' }}>Digiway Startup Program</h4>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.3' }}>Powering Founders, Fuelling Growth</p>
+            </div>
+          </motion.div>
+
+          <motion.div whileHover={{ x: 5 }} style={{ display: 'flex', gap: '1rem', alignItems: 'center', cursor: 'pointer' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '12px', flexShrink: 0, overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="E-commerce" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div>
+              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '0.2rem', lineHeight: '1.2' }}>Products for D2C &amp; E-commerce</h4>
+              <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', lineHeight: '1.3' }}>All-In-One Solution for Checkout &amp; Payments</p>
+            </div>
+          </motion.div>
+
+          <motion.div whileHover={{ x: 5 }} style={{ display: 'flex', gap: '1rem', alignItems: 'center', cursor: 'pointer' }}>
+            <div style={{ width: '60px', height: '60px', borderRadius: '12px', flexShrink: 0, overflow: 'hidden' }}>
+              <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="WhatsApp" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <div>
+              <h4 style={{ fontSize: '0.85rem', fontWeight: '800', color: '#1a1a1a', marginBottom: '0.2rem', lineHeight: '1.2' }}>Grow your business on WhatsApp</h4>
+            </div>
+          </motion.div>
+
+          <a href="#" style={{ fontSize: '0.75rem', fontWeight: '800', color: '#1a1a1a', textTransform: 'uppercase', textDecoration: 'none', marginTop: '0.5rem', display: 'inline-block', letterSpacing: '0.5px' }}>
+            EXPLORE MORE AT BLOGS &gt;
+          </a>
         </motion.div>
 
       </div>

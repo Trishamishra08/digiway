@@ -252,10 +252,10 @@ const MainFeatures = () => {
                     flexDirection: 'column', 
                     justifyContent: 'center',
                     padding: isMobile ? '2rem 1.5rem' : '3rem',
-                    background: 'linear-gradient(145deg, #0a0f1c 0%, #111827 100%)',
+                    background: 'linear-gradient(145deg, #f0fdf4 0%, #dcfce7 100%)', // Very light soft green shade
                     borderRadius: '0px',
-                    border: '1px solid rgba(255,255,255,0.05)',
-                    borderBottom: i !== features.length - 1 ? 'none' : '1px solid rgba(255,255,255,0.05)',
+                    border: '1px solid rgba(0,0,0,0.05)', // Subtle dark border for light bg
+                    borderBottom: i !== features.length - 1 ? 'none' : '1px solid rgba(0,0,0,0.05)',
                     boxShadow: 'none'
                 }}
               >
@@ -266,22 +266,22 @@ const MainFeatures = () => {
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
-                            style={{ marginBottom: '1rem', fontSize: isMobile ? '1.6rem' : '2rem', color: 'white' }}
+                            style={{ marginBottom: '1rem', fontSize: isMobile ? '1.6rem' : '2rem', color: '#1a1a1a' }}
                         >
-                            {f.title} <span style={{ color: 'var(--secondary)' }}>{f.titleHighlight}</span>
+                            {f.title} <span style={{ color: 'var(--primary)' }}>{f.titleHighlight}</span>
                         </motion.h3>
                         <motion.p 
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ duration: 0.6, delay: 0.2 }}
-                            style={{ fontSize: isMobile ? '0.9rem' : '0.95rem', color: 'rgba(255,255,255,0.6)', marginBottom: isMobile ? '1.2rem' : '2rem', lineHeight: '1.6' }}
+                            style={{ fontSize: isMobile ? '0.9rem' : '0.95rem', color: 'var(--text-muted)', marginBottom: isMobile ? '1.2rem' : '2rem', lineHeight: '1.6' }}
                         >
                             {f.desc}
                         </motion.p>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                             {f.checkpoints.map((check, idx) => (
-                                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', fontWeight: '600', color: 'white' }}>
-                                    <CheckCircle2 size={16} color="var(--secondary)" />
+                                <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.85rem', fontWeight: '600', color: '#333' }}>
+                                    <CheckCircle2 size={16} color="var(--primary)" />
                                     <span>{check}</span>
                                 </div>
                             ))}
